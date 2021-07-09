@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">FoodieMoodie</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="recipes">Recipes</string>
+    <string name="favourites">Favourites</string>
+    <string name="joke">Joke</string>
+</resources>
