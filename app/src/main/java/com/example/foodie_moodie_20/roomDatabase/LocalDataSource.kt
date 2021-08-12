@@ -1,14 +1,14 @@
-package com.example.foodie_moodie_20.database
+package com.example.foodie_moodie_20.roomDatabase
 
-import com.example.foodie_moodie_20.database.dao.RecipesDao
+import com.example.foodie_moodie_20.roomDatabase.dao.RecipesDao
 
-import com.example.foodie_moodie_20.database.entities.FavouritesEntity
-import com.example.foodie_moodie_20.database.entities.RecipesEntity
+import com.example.foodie_moodie_20.roomDatabase.entities.FavouritesEntity
+import com.example.foodie_moodie_20.roomDatabase.entities.RecipesEntity
 import kotlinx.coroutines.flow.Flow
 
 class LocalDataSource( var recipesDao: RecipesDao)
 {
-    //private val database:RecipesDatabase = DatabaseModule.provideDatabase( this)
+
 
     fun readRecipes(): Flow<List<RecipesEntity>> {
         return recipesDao.readRecipes()

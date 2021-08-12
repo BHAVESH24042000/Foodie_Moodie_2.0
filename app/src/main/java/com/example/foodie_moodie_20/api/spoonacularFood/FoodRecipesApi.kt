@@ -1,4 +1,4 @@
-package com.example.foodiemoodie.API
+package com.example.foodie_moodie_20.api.spoonacularFood
 
 import com.example.foodiepoodie.dataModels.FoodRecipe
 import retrofit2.Response

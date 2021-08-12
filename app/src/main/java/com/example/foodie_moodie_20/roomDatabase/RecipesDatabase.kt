@@ -1,13 +1,13 @@
-package com.example.foodie_moodie_20.database
+package com.example.foodie_moodie_20.roomDatabase
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import com.example.foodie_moodie_20.database.dao.RecipesDao
-import com.example.foodie_moodie_20.database.entities.FavouritesEntity
-import com.example.foodie_moodie_20.database.entities.RecipesEntity
+import com.example.foodie_moodie_20.roomDatabase.dao.RecipesDao
+import com.example.foodie_moodie_20.roomDatabase.entities.FavouritesEntity
+import com.example.foodie_moodie_20.roomDatabase.entities.RecipesEntity
 import com.example.foodie_moodie_20.utils.Constants
 
 

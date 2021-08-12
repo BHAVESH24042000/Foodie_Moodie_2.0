@@ -3,10 +3,11 @@ package com.example.foodie_moodie_20.utils
 class Constants {
 
     companion object {
-        const val BASE_URL = "https://api.spoonacular.com"
+        const val BASE_URLRecipie = "https://api.spoonacular.com"
+        const val BASE_URLMaps = "https://maps.googleapis.com/maps/api/place/"
         const val BASE_IMAGE_URL = "https://spoonacular.com/cdn/ingredients_100x100/"
-        
-
+        const val API_KEY = "9cf8a64f276d4e3a9800fddc83905f11"
+        const val API_KEYmaps = "AIzaSyDJWdTrVeRwjK4lsL5lW3yhl2Qg-xh9GtU"
 
         const val RECIPE_RESULT_KEY = "recipeBundle"
 

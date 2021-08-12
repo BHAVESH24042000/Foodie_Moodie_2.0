@@ -1,4 +1,4 @@
-package com.example.foodie_moodie_20.database
+package com.example.foodie_moodie_20.roomDatabase
 
 import androidx.room.TypeConverter
 import com.example.foodiepoodie.dataModels.FoodRecipe
