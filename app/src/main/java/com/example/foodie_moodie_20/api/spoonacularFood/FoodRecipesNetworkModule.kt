@@ -1,6 +1,6 @@
-package com.example.foodiemoodie.API
+package com.example.foodie_moodie_20.api.spoonacularFood
 
-import com.example.foodie_moodie_20.utils.Constants.Companion.BASE_URL
+import com.example.foodie_moodie_20.utils.Constants.Companion.BASE_URLRecipie
 
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit
 
 
 
-object NetworkModule {
+object FoodRecipesNetworkModule {
 
 
     val okHttpBuilder = OkHttpClient.Builder()
@@ -18,7 +18,7 @@ object NetworkModule {
             .connectTimeout(2, TimeUnit.SECONDS)
 
     val retrofitBuilder = Retrofit.Builder()
-            .baseUrl(BASE_URL)
+            .baseUrl(BASE_URLRecipie)
             .addConverterFactory(GsonConverterFactory.create())
 
     val api = retrofitBuilder

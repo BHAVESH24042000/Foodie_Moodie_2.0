@@ -5,12 +5,12 @@ import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import androidx.lifecycle.*
-import com.example.foodie_moodie_20.database.RecipesDatabase
-import com.example.foodie_moodie_20.database.dao.RecipesDao
+import com.example.foodie_moodie_20.roomDatabase.RecipesDatabase
+import com.example.foodie_moodie_20.roomDatabase.dao.RecipesDao
 
-import com.example.foodie_moodie_20.database.entities.FavouritesEntity
-import com.example.foodie_moodie_20.database.entities.RecipesEntity
-import com.example.foodiemoodie.API.NetworkResult
+import com.example.foodie_moodie_20.roomDatabase.entities.FavouritesEntity
+import com.example.foodie_moodie_20.roomDatabase.entities.RecipesEntity
+import com.example.foodie_moodie_20.api.spoonacularFood.FoodRecipesNetworkResult
 import com.example.foodie_moodie_20.utils.Repository
 import com.example.foodiepoodie.dataModels.FoodRecipe
 import kotlinx.coroutines.Dispatchers.IO
@@ -22,7 +22,6 @@ import java.lang.Exception
 class MainViewModel(application: Application): AndroidViewModel(application) {
 
     val db by lazy{
-
         RecipesDatabase.provideDatabase(getApplication())
     }
 
@@ -55,8 +54,8 @@ class MainViewModel(application: Application): AndroidViewModel(application) {
 
     /*RETROFIT*/
 
-    var recipesResponse:MutableLiveData<NetworkResult<FoodRecipe>> = MutableLiveData()
-    var searchedRecipesResponse: MutableLiveData<NetworkResult<FoodRecipe>> = MutableLiveData()
+    var recipesResponse:MutableLiveData<FoodRecipesNetworkResult<FoodRecipe>> = MutableLiveData()
+    var searchedRecipesResponse: MutableLiveData<FoodRecipesNetworkResult<FoodRecipe>> = MutableLiveData()
 
     fun getRecipes(queries:Map<String,String>)=viewModelScope.launch{
         getRecipesSafeCall(queries)
@@ -70,7 +69,7 @@ class MainViewModel(application: Application): AndroidViewModel(application) {
 
        if(hasInternetConnection(getApplication() )){
           try {
-              val response= repository.remote.getRecipes(queries)
+              val response= repository.recipeRemote.getRecipes(queries)
 
               recipesResponse.postValue(handleFoodRecipesResponse(response))
 
@@ -82,24 +81,24 @@ class MainViewModel(application: Application): AndroidViewModel(application) {
               }
 
           } catch (e:Exception){
-           recipesResponse.value=NetworkResult.Error("Recipes not found ")
+           recipesResponse.value= FoodRecipesNetworkResult.Error("Recipes not found ")
           }
        }else{
-             recipesResponse.value=NetworkResult.Error("No Internet Connection")
+             recipesResponse.value= FoodRecipesNetworkResult.Error("No Internet Connection")
        }
     }
 
     private suspend fun searchRecipesSafeCall(searchQuery: Map<String, String>) {
-        searchedRecipesResponse.value = NetworkResult.Loading()
+        searchedRecipesResponse.value = FoodRecipesNetworkResult.Loading()
         if (hasInternetConnection(getApplication())) {
             try {
-                val response = repository.remote.searchRecipes(searchQuery)
+                val response = repository.recipeRemote.searchRecipes(searchQuery)
                 searchedRecipesResponse.value = handleFoodRecipesResponse(response)
             } catch (e: Exception) {
-                searchedRecipesResponse.value = NetworkResult.Error("Recipes not found.")
+                searchedRecipesResponse.value = FoodRecipesNetworkResult.Error("Recipes not found.")
             }
         } else {
-            searchedRecipesResponse.value = NetworkResult.Error("No Internet Connection.")
+            searchedRecipesResponse.value = FoodRecipesNetworkResult.Error("No Internet Connection.")
         }
     }
 
@@ -111,23 +110,23 @@ class MainViewModel(application: Application): AndroidViewModel(application) {
         }
     }
 
-    private fun handleFoodRecipesResponse(response: Response<FoodRecipe>): NetworkResult<FoodRecipe>? {
+    private fun handleFoodRecipesResponse(response: Response<FoodRecipe>): FoodRecipesNetworkResult<FoodRecipe>? {
         when {
             response.message().toString().contains("timeout") -> {
-                return NetworkResult.Error("Timeout")
+                return FoodRecipesNetworkResult.Error("Timeout")
             }
             response.code() == 402 -> {
-                return NetworkResult.Error("API Calls Limit")
+                return FoodRecipesNetworkResult.Error("API Calls Limit")
             }
             response.body()!!.results.isNullOrEmpty() -> {
-                return NetworkResult.Error("Recipes not found")
+                return FoodRecipesNetworkResult.Error("Recipes not found")
             }
             response.isSuccessful -> {
                 val foodRecipes = response.body()
-                return NetworkResult.Success(foodRecipes!!)
+                return FoodRecipesNetworkResult.Success(foodRecipes!!)
             }
             else -> {
-                return NetworkResult.Error(response.message())
+                return FoodRecipesNetworkResult.Error(response.message())
             }
         }
     }

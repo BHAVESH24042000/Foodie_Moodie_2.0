@@ -1,9 +1,9 @@
-package com.example.foodie_moodie_20.database.dao
+package com.example.foodie_moodie_20.roomDatabase.dao
 
 import androidx.room.*
 
-import com.example.foodie_moodie_20.database.entities.FavouritesEntity
-import com.example.foodie_moodie_20.database.entities.RecipesEntity
+import com.example.foodie_moodie_20.roomDatabase.entities.FavouritesEntity
+import com.example.foodie_moodie_20.roomDatabase.entities.RecipesEntity
 import kotlinx.coroutines.flow.Flow
 
 

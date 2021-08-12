@@ -1,6 +1,5 @@
 package com.example.foodie_moodie_20
 
-import android.graphics.pdf.PdfDocument
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -10,14 +9,12 @@ import androidx.activity.viewModels
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.navArgs
-import androidx.viewpager.widget.PagerAdapter
-import com.example.foodie_moodie_20.database.entities.FavouritesEntity
+import com.example.foodie_moodie_20.roomDatabase.entities.FavouritesEntity
 import com.example.foodie_moodie_20.databinding.ActivityDetailsBinding
 import com.example.foodie_moodie_20.utils.Constants.Companion.RECIPE_RESULT_KEY
 import com.example.foodie_moodie_20.viewModels.MainViewModel
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.tabs.TabLayoutMediator
-import kotlinx.android.synthetic.main.activity_details.*
 
 class DetailsActivity : AppCompatActivity() {
 

@@ -13,7 +13,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.foodie_moodie_20.databinding.FragmentRecipiesBinding
-import com.example.foodiemoodie.API.NetworkResult
+import com.example.foodie_moodie_20.api.spoonacularFood.FoodRecipesNetworkResult
 import com.example.foodie_moodie_20.viewModels.MainViewModel
 import com.example.foodie_moodie_20.viewModels.RecipesViewModel
 import com.example.foodiemoodie.adapters.RecipesAdapter
@@ -90,14 +90,14 @@ class  RecipiesFragment : Fragment(), SearchView.OnQueryTextListener {
         mainViewModel.getRecipes(recipesViewModel.applyQueries())
         mainViewModel.recipesResponse.observe(viewLifecycleOwner, { response ->
             when (response) {
-                is NetworkResult.Success -> {
+                is FoodRecipesNetworkResult.Success -> {
                     hideShimmerEffect()
                    // response.data?.let { mAdapter.submitList(it)}
                     mAdapter.submitList(response.data?.results)
                      backFromBottomSheet=false
                     //recipesViewModel.saveMealAndDietType()
                 }
-                is NetworkResult.Error -> {
+                is FoodRecipesNetworkResult.Error -> {
                     hideShimmerEffect()
                     loadDataFromCache()
 
@@ -109,7 +109,7 @@ class  RecipiesFragment : Fragment(), SearchView.OnQueryTextListener {
                         Toast.LENGTH_LONG
                     ).show()
                 }
-                is NetworkResult.Loading -> {
+                is FoodRecipesNetworkResult.Loading -> {
                     showShimmerEffect()
                 }
             }
@@ -147,12 +147,12 @@ class  RecipiesFragment : Fragment(), SearchView.OnQueryTextListener {
         mainViewModel.searchRecipes(recipesViewModel.applySearchQuery(searchQuery))
         mainViewModel.searchedRecipesResponse.observe(viewLifecycleOwner, { response ->
             when (response) {
-                is NetworkResult.Success -> {
+                is FoodRecipesNetworkResult.Success -> {
                     hideShimmerEffect()
                     val foodRecipe = response.data
                     mAdapter.submitList(response.data?.results)
                 }
-                is NetworkResult.Error -> {
+                is FoodRecipesNetworkResult.Error -> {
                     hideShimmerEffect()
                     loadDataFromCache()
                     Toast.makeText(
@@ -161,7 +161,7 @@ class  RecipiesFragment : Fragment(), SearchView.OnQueryTextListener {
                         Toast.LENGTH_SHORT
                     ).show()
                 }
-                is NetworkResult.Loading -> {
+                is FoodRecipesNetworkResult.Loading -> {
                     showShimmerEffect()
                 }
             }

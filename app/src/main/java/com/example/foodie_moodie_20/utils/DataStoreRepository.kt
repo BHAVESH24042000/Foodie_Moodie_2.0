@@ -45,12 +45,6 @@ class DataStoreRepository(context: Context) {
         }
     }
 
-    suspend fun saveBackOnline(backOnline: Boolean) {
-        dataStore.edit { preferences ->
-            preferences[PreferenceKeys.backOnline] = backOnline
-        }
-    }
-
     val readMealAndDietType: Flow<MealAndDietType> = dataStore.data
         .catch { exception ->
             if (exception is IOException) {
@@ -72,7 +66,7 @@ class DataStoreRepository(context: Context) {
             )
         }
 
-    val readBackOnline: Flow<Boolean> = dataStore.data
+   /* val readBackOnline: Flow<Boolean> = dataStore.data
         .catch { exception ->
             if (exception is IOException) {
                 emit(emptyPreferences())
@@ -84,6 +78,12 @@ class DataStoreRepository(context: Context) {
             val backOnline = preferences[PreferenceKeys.backOnline] ?: false
             backOnline
         }
+
+    suspend fun saveBackOnline(backOnline: Boolean) {
+        dataStore.edit { preferences ->
+            preferences[PreferenceKeys.backOnline] = backOnline
+        }
+    }*/
 }
 
 data class MealAndDietType(

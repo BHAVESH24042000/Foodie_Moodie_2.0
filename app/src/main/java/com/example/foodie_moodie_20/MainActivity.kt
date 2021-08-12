@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
             setOf(
                 R.id.recipiesFragment,
                 R.id.favouriteRecipiesFragment,
-
+                R.id.restaurantsFragment
             )
         )
 
