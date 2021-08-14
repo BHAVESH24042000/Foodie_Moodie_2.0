@@ -1,0 +1,15 @@
+package com.example.foodie_moodie_20.api.gmapPlacesApi.dataModels
+
+
+import com.google.gson.annotations.SerializedName
+
+data class Photo(
+    @SerializedName("height")
+    val height: Int,
+    @SerializedName("html_attributions")
+    val htmlAttributions: List<String>,
+    @SerializedName("photo_reference")
+    val photoReference: String?,
+    @SerializedName("width")
+    val width: Int?
+)
