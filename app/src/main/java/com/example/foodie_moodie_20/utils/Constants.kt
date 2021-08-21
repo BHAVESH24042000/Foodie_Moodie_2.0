@@ -6,10 +6,45 @@ class Constants {
         const val BASE_URLRecipie = "https://api.spoonacular.com"
         const val BASE_URLMaps = "https://maps.googleapis.com/maps/api/place/"
         const val BASE_IMAGE_URL = "https://spoonacular.com/cdn/ingredients_100x100/"
-        const val API_KEY = "9cf8a64f276d4e3a9800fddc83905f11"
+        const val API_KEY = "8ff8a26e330b4d51984d441baec938a8"
         const val API_KEYmaps = "AIzaSyDJWdTrVeRwjK4lsL5lW3yhl2Qg-xh9GtU"
-
+        const val PLACE_AUTOCOMPLETE_REQUEST_CODE = 3
         const val RECIPE_RESULT_KEY = "recipeBundle"
+        const val IMAGE_URI: String="imageURI"
+        const val IMAGE_URL: String="imageURL"
+        const val PRIVACY: String="privacy"
+        const val LONGITUDE: String="longitude"
+        const val LATITUDE: String="latitude"
+        const val RATING: String="rating"
+        const val LOCATION: String="location"
+        const val DATE: String="date"
+        const val CITY_NAME: String="cityName"
+        const val DESCRIPTION = "description"
+        const val TITLE = "title"
+
+        const val PUBLIC = "public"
+        const val PRIVATE = "private"
+
+        const val FIRST_NAME="firstName"
+        const val USER_NAME="userName"
+
+        const val USERS = "users"
+        const val MEMORIES = "memories"
+
+        const val EXTRA_USER_DETAILS = "extraUserDetails"
+        const val MEMORY_DETAILS = "memory_details"
+
+        const val CAMERA = 1
+        const val GALLERY = 2
+
+
+        const val IMAGE_NAME_IN_CLOUD = "memory_image"
+
+        const val USERID = "userID"
+        const val MEMORY_ID = "memoryID"
+
+        const val PASS_MEMORY = "pass_memory"
+
 
         // API Query Keys
         const val QUERY_SEARCH = "query"

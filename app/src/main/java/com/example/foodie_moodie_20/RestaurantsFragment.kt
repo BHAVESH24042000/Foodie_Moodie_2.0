@@ -10,6 +10,7 @@ import android.content.pm.PackageManager
 import android.location.Location
 import android.location.LocationListener
 import android.location.LocationManager
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.os.Looper
@@ -88,6 +89,19 @@ class RestaurantsFragment : Fragment(), LocationListener , OnMapReadyCallback {
         _binding?.feedRecyclerView?.adapter=feedAdapter
         showShimmerEffect()
 
+        _binding?.onGoogleMa?.setOnClickListener {
+            if( latitude !=null && longitude!=null){
+
+                val strUri = "https://www.google.com/maps/search/Restaurants/@" +latitude + ","+longitude+",15z/data=!3m1!4b1"
+                Log.i("MAPS URI", strUri)
+                val intent = Intent(Intent.ACTION_VIEW, Uri.parse(strUri))
+
+                intent.setClassName("com.google.android.apps.maps", "com.google.android.maps.MapsActivity")
+                startActivity(intent)
+
+            }
+
+        }
         return _binding?.root
     }
 

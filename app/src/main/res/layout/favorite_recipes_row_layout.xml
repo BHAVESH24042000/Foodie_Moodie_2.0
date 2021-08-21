@@ -6,8 +6,8 @@
     android:id="@+id/favoriteRecipesRowLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="4dp"
-    android:layout_marginBottom="4dp">
+    android:layout_marginTop="2dp"
+    android:layout_marginBottom="2dp">
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/favorite_row_cardView"
@@ -19,19 +19,16 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:strokeColor="@color/strokeColor"
         app:strokeWidth="1dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/cardBackgroundColor">
+            android:layout_height="wrap_content">
 
             <ImageView
                 android:id="@+id/favorite_recipe_imageView"
-
-                android:layout_width="200dp"
-                android:layout_height="0dp"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
                 android:scaleType="centerCrop"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -43,39 +40,37 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginEnd="12dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
                 android:ellipsize="end"
-                android:fontFamily="@font/courgette"
+
                 android:maxLines="2"
-                android:text="@{favoritesEntity.result.title}"
-                android:textColor="@color/titleColor"
+                android:text="kfjnlfdjndfjnvjdfnvbljdmblklkmlgdbldmlk l"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintHorizontal_bias="0.147"
                 app:layout_constraintStart_toEndOf="@+id/favorite_recipe_imageView"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"/>
 
             <TextView
                 android:id="@+id/favorite_description_textView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="5dp"
                 android:ellipsize="end"
                 android:maxLines="3"
-
-                android:textColor="@color/descriptionColor"
+                android:text="oivklmetlkmblkemblk"
                 app:layout_constraintEnd_toEndOf="@+id/favorite_title_textView"
                 app:layout_constraintStart_toStartOf="@+id/favorite_title_textView"
                 app:layout_constraintTop_toBottomOf="@+id/favorite_title_textView" />
 
             <ImageView
                 android:id="@+id/favorite_heart_imageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:layout_marginBottom="36dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/favorite_heart_textView"
                 app:layout_constraintStart_toStartOf="@+id/favorite_heart_textView"
@@ -95,8 +90,9 @@
 
             <ImageView
                 android:id="@+id/favorite_clock_imageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+
                 app:layout_constraintEnd_toEndOf="@+id/favorite_clock_textView"
                 app:layout_constraintStart_toStartOf="@+id/favorite_clock_textView"
                 app:layout_constraintTop_toTopOf="@+id/favorite_heart_imageView"
@@ -116,9 +112,8 @@
 
             <ImageView
                 android:id="@+id/favorite_leaf_imageView"
-
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 app:layout_constraintEnd_toEndOf="@+id/favorite_leaf_textView"
                 app:layout_constraintStart_toStartOf="@+id/favorite_leaf_textView"
                 app:layout_constraintTop_toTopOf="@+id/favorite_clock_imageView"

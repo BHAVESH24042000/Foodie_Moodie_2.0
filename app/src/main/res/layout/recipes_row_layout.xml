@@ -7,8 +7,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:id="@+id/recipesRowLayout"
-    android:layout_marginTop="5dp"
-    android:layout_marginBottom="5dp">
+    android:layout_marginTop="2dp"
+    android:layout_marginBottom="2dp">
 
 
     <com.google.android.material.card.MaterialCardView
@@ -30,8 +30,8 @@
 
             <ImageView
                 android:id="@+id/recipe_imageView"
-                android:layout_width="175dp"
-                android:layout_height="0dp"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
                 android:scaleType="centerCrop"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -43,8 +43,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginEnd="12dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
                 android:ellipsize="end"
 
                 android:maxLines="2"
@@ -60,7 +60,7 @@
                 android:id="@+id/description_textView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="5dp"
                 android:ellipsize="end"
                 android:maxLines="3"
                 android:text="oivklmetlkmblkemblk"
@@ -70,10 +70,10 @@
 
             <ImageView
                 android:id="@+id/heart_imageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:layout_marginBottom="36dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/heart_textView"
                 app:layout_constraintStart_toStartOf="@+id/heart_textView"
@@ -93,8 +93,8 @@
 
             <ImageView
                 android:id="@+id/clock_imageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 app:tint="@color/yellow"
                 app:layout_constraintEnd_toEndOf="@+id/clock_textView"
                 app:layout_constraintStart_toStartOf="@+id/clock_textView"
@@ -115,8 +115,8 @@
 
             <ImageView
                 android:id="@+id/leaf_imageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 app:layout_constraintEnd_toEndOf="@+id/leaf_textView"
                 app:layout_constraintStart_toStartOf="@+id/leaf_textView"
                 app:layout_constraintTop_toTopOf="@id/clock_imageView"

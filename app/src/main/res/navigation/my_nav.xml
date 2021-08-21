@@ -49,7 +49,7 @@
     <activity
         android:id="@+id/detailsActivity"
         android:name="com.example.foodie_moodie_20.DetailsActivity"
-        android:label="activity_details"
+        android:label="Details"
         tools:layout="@layout/activity_details" >
 
         <argument
@@ -59,7 +59,7 @@
     <fragment
         android:id="@+id/restaurantsFragment"
         android:name="com.example.foodie_moodie_20.RestaurantsFragment"
-        android:label="fragment_restaurants"
+        android:label="Restaurants"
         tools:layout="@layout/fragment_restaurants" />
 
 </navigation>

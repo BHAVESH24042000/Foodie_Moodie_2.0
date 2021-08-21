@@ -19,10 +19,11 @@ import com.bumptech.glide.Glide
 import com.example.foodie_moodie_20.R
 import com.example.foodie_moodie_20.RecipiesFragmentDirections
 import com.example.foodie_moodie_20.databinding.RecipesRowLayoutBinding
+import com.example.foodie_moodie_20.firebase.FirebaseRecipesSearchFragmentDirections
 
 
 import com.example.foodiepoodie.dataModels.Result
-
+import com.google.firebase.auth.FirebaseAuth
 
 
 class RecipesAdapter : ListAdapter<Result, RecipesAdapter.ViewHolder>(
@@ -36,7 +37,7 @@ class RecipesAdapter : ListAdapter<Result, RecipesAdapter.ViewHolder>(
         }
 )
 {
-
+    val user= FirebaseAuth.getInstance().currentUser
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 
 
@@ -66,10 +67,24 @@ class RecipesAdapter : ListAdapter<Result, RecipesAdapter.ViewHolder>(
               leafTextView.setTextColor(ContextCompat.getColor(holder.itemView.context, R.color.green))
               leafImageView.setColorFilter(ContextCompat.getColor(holder.itemView.context, R.color.green))
           }
+
+
+          if(user==null){
           root.setOnClickListener { view->
 
               val action = RecipiesFragmentDirections.actionRecipiesFragmentToDetailsActivity(singleRecipe)
               view.findNavController().navigate(action)
+          }
+          }else{
+
+              root.setOnClickListener { view->
+
+                  val action = FirebaseRecipesSearchFragmentDirections.actionFirebaseRecipesSearchFragmentToDetailsActivity(singleRecipe)
+                  view.findNavController().navigate(action)
+              }
+
+
+
           }
 
 

@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.webkit.WebViewClient
 import com.example.foodie_moodie_20.databinding.FragmentInstructionsBinding
+
 import com.example.foodie_moodie_20.utils.Constants
 import com.example.foodiepoodie.dataModels.Result
 

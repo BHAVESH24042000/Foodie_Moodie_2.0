@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.foodie_moodie_20.databinding.FragmentFavouriteRecipiesBinding
+
 import com.example.foodie_moodie_20.viewModels.MainViewModel
 import com.example.foodiemoodie.adapters.FavoriteRecipesAdapter
 import com.google.android.material.snackbar.Snackbar
@@ -89,7 +90,6 @@ class FavouriteRecipiesFragment : Fragment() {
                 } else if (direction == ItemTouchHelper.RIGHT) {
                     val action =FavouriteRecipiesFragmentDirections.actionFavouriteRecipiesFragmentToDetailsActivity(mAdapter.singleRecipe.result)
                     view?.findNavController()?.navigate(action)
-
 
                 }
             }
