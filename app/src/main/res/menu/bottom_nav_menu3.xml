@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/firebaseGlobalFragment"
+        android:title="Global"
+        android:icon="@drawable/ic_global"/>
+
+    <item android:id="@+id/firebasePersonalFragment"
+        android:title="Personal"
+        android:icon="@drawable/baseline_person_black_24dp"/>
+
+    <item android:id="@+id/firebaseRecipesSearchFragment"
+        android:title="Search"
+        android:icon="@drawable/baseline_search_black_24dp"/>
+
+    <item android:id="@+id/firebaseRecipesFavouriteFragment"
+        android:title="Favourites"
+        android:icon="@drawable/ic_star"/>
+
+    <item android:id="@+id/restaurantsFragment"
+        android:title="Restaurants"
+        android:icon="@drawable/baseline_add_location_black_24dp"/>
+</menu>
