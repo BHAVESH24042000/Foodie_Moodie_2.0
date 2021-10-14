@@ -1,4 +1,4 @@
-package com.example.foodie_moodie_20.api.spoonacularFood
+package com.example.foodie_moodie_20.api.api
 
 sealed class FoodRecipesNetworkResult<T>(
         val data: T? = null,

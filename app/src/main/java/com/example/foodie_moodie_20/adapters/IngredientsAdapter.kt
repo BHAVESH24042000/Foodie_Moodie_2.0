@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.foodie_moodie_20.R
-import com.example.foodie_moodie_20.RecipiesFragmentDirections
+
 import com.example.foodie_moodie_20.databinding.IngredientsRowLayoutBinding
 import com.example.foodie_moodie_20.databinding.RecipesRowLayoutBinding
 import com.example.foodie_moodie_20.utils.Constants.Companion.BASE_IMAGE_URL

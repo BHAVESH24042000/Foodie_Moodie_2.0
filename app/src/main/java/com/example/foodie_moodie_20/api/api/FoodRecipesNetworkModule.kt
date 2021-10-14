@@ -1,4 +1,4 @@
-package com.example.foodie_moodie_20.api.spoonacularFood
+package com.example.foodie_moodie_20.api.api
 
 import com.example.foodie_moodie_20.utils.Constants.Companion.BASE_URLRecipie
 

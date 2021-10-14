@@ -1,4 +1,4 @@
-package com.example.foodie_moodie_20
+package com.example.foodie_moodie_20.uiScreens.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,8 +10,9 @@ import com.example.foodie_moodie_20.adapters.IngredientsAdapter
 import com.example.foodie_moodie_20.databinding.FragmentIngredientsBinding
 import com.example.foodie_moodie_20.utils.Constants.Companion.RECIPE_RESULT_KEY
 import com.example.foodiepoodie.dataModels.Result
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class IngredientsFragment : Fragment() {
     private val mAdapter: IngredientsAdapter by lazy { IngredientsAdapter() }
 

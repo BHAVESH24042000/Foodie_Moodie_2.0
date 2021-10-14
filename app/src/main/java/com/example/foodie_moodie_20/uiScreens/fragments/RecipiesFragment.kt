@@ -1,4 +1,4 @@
-package com.example.foodie_moodie_20
+package com.example.foodie_moodie_20.uiScreens.fragments
 
 import android.os.Bundle
 import android.util.Log
@@ -12,14 +12,17 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.foodie_moodie_20.R
 import com.example.foodie_moodie_20.databinding.FragmentRecipiesBinding
-import com.example.foodie_moodie_20.api.spoonacularFood.FoodRecipesNetworkResult
+import com.example.foodie_moodie_20.api.api.FoodRecipesNetworkResult
 import com.example.foodie_moodie_20.viewModels.MainViewModel
 import com.example.foodie_moodie_20.viewModels.RecipesViewModel
 import com.example.foodiemoodie.adapters.RecipesAdapter
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
-class  RecipiesFragment : Fragment(), SearchView.OnQueryTextListener {
+@AndroidEntryPoint
+class   RecipiesFragment : Fragment(), SearchView.OnQueryTextListener {
 
    var backFromBottomSheet: Boolean?= null
     private var binding: FragmentRecipiesBinding? = null
@@ -104,8 +107,8 @@ class  RecipiesFragment : Fragment(), SearchView.OnQueryTextListener {
 
                     Toast.makeText(
                         requireContext(),
-                        response.message.toString() +
-                                " Previous Recipies Loaded ",
+                        response.message.toString()
+                                ,
                         Toast.LENGTH_LONG
                     ).show()
                 }
@@ -126,7 +129,7 @@ class  RecipiesFragment : Fragment(), SearchView.OnQueryTextListener {
 
                     Toast.makeText(
                         requireContext(),
-                        "",
+                        " Previous Recipies Loaded ",
                         Toast.LENGTH_SHORT
                     ).show()
                 }

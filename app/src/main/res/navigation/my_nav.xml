@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/recipiesFragment"
-        android:name="com.example.foodie_moodie_20.RecipiesFragment"
+        android:name="com.example.foodie_moodie_20.uiScreens.fragments.RecipiesFragment"
         android:label="Recipes"
         tools:layout="@layout/fragment_recipies" >
         <action
@@ -22,7 +22,7 @@
     </fragment>
     <fragment
         android:id="@+id/favouriteRecipiesFragment"
-        android:name="com.example.foodie_moodie_20.FavouriteRecipiesFragment"
+        android:name="com.example.foodie_moodie_20.uiScreens.fragments.FavouriteRecipiesFragment"
         android:label="Favourites"
         tools:layout="@layout/fragment_favourite_recipies" >
         <action
@@ -32,7 +32,7 @@
 
     <dialog
         android:id="@+id/recipesBottomSheet"
-        android:name="com.example.foodie_moodie_20.RecipesBottomSheet"
+        android:name="com.example.foodie_moodie_20.uiScreens.RecipesBottomSheet"
         android:label="RecipesBottomSheet" >
         <action
             android:id="@+id/action_recipesBottomSheet_to_recipiesFragment"
@@ -48,7 +48,7 @@
     </dialog>
     <activity
         android:id="@+id/detailsActivity"
-        android:name="com.example.foodie_moodie_20.DetailsActivity"
+        android:name="com.example.foodie_moodie_20.uiScreens.activities.DetailsActivity"
         android:label="activity_details"
         tools:layout="@layout/activity_details" >
 
@@ -56,10 +56,6 @@
             android:name="result"
             app:argType="com.example.foodiepoodie.dataModels.Result" />
     </activity>
-    <fragment
-        android:id="@+id/restaurantsFragment"
-        android:name="com.example.foodie_moodie_20.RestaurantsFragment"
-        android:label="fragment_restaurants"
-        tools:layout="@layout/fragment_restaurants" />
+
 
 </navigation>

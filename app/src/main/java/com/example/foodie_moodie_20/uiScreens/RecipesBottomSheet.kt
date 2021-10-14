@@ -1,4 +1,4 @@
-package com.example.foodie_moodie_20
+package com.example.foodie_moodie_20.uiScreens
 
 import android.os.Bundle
 import android.util.Log
@@ -10,7 +10,9 @@ import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.asLiveData
 import androidx.navigation.fragment.findNavController
+import com.example.foodie_moodie_20.R
 import com.example.foodie_moodie_20.databinding.FragmentRecipesBottomSheetBinding
+//import com.example.foodie_moodie_20.databinding.FragmentRecipesBottomSheetBinding
 import com.example.foodie_moodie_20.utils.Constants.Companion.DEFAULT_DIET_TYPE
 import com.example.foodie_moodie_20.utils.Constants.Companion.DEFAULT_MEAL_TYPE
 import com.example.foodie_moodie_20.viewModels.RecipesViewModel
@@ -78,7 +80,8 @@ class  RecipesBottomSheet : BottomSheetDialogFragment() {
             )
 
 
-            findNavController().navigate(R.id.action_recipesBottomSheet_to_recipiesFragment,
+            findNavController().navigate(
+                R.id.action_recipesBottomSheet_to_recipiesFragment,
                 bundleOf( "backFromBottomSheet" to true))
         }
 

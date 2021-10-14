@@ -5,8 +5,9 @@ import com.example.foodie_moodie_20.roomDatabase.dao.RecipesDao
 import com.example.foodie_moodie_20.roomDatabase.entities.FavouritesEntity
 import com.example.foodie_moodie_20.roomDatabase.entities.RecipesEntity
 import kotlinx.coroutines.flow.Flow
+import javax.inject.Inject
 
-class LocalDataSource( var recipesDao: RecipesDao)
+class RoomDbDataSource  @Inject constructor( private val recipesDao: RecipesDao)
 {
 
 

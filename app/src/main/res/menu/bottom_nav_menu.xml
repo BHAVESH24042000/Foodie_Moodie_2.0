@@ -9,9 +9,5 @@
         android:title="@string/favourites"
         android:icon="@drawable/ic_star"/>
 
-    <item android:id="@+id/restaurantsFragment"
-        android:title="@string/Restaurants"
-        android:icon="@drawable/ic_restaurant_black_24dp"/>
-
 
 </menu>

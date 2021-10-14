@@ -1,12 +1,15 @@
-package com.example.foodie_moodie_20.api.spoonacularFood
+package com.example.foodie_moodie_20.api.api
 
 import com.example.foodiepoodie.dataModels.FoodRecipe
 import retrofit2.Response
+import javax.inject.Inject
 
 
-class FoodRecipesRemoteDataSource {
+class FoodRecipesRemoteDataSource @Inject constructor(
+    private val foodRecipesApi: FoodRecipesApi
+) {
 
-    private val foodRecipesApi: FoodRecipesApi = FoodRecipesNetworkModule.api
+   // private val foodRecipesApi: FoodRecipesApi = FoodRecipesNetworkModule.api
 
     suspend fun getRecipes(queries: Map<String, String>): Response<FoodRecipe> {
         return foodRecipesApi.getRecipes(queries)

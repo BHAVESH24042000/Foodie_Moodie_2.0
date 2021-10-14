@@ -58,13 +58,6 @@ class FavoriteRecipesAdapter : ListAdapter<FavouritesEntity, FavoriteRecipesAdap
               favoriteLeafImageView.setColorFilter(ContextCompat.getColor(holder.itemView.context, R.color.green))
           }
 
-         /* root.setOnClickListener { view->
-
-              val action =FavouriteRecipiesFragmentDirections.actionFavouriteRecipiesFragmentToDetailsActivity(singleRecipe.result)
-              view.findNavController().navigate(action)
-          }*/
-
-
       }
     }
 

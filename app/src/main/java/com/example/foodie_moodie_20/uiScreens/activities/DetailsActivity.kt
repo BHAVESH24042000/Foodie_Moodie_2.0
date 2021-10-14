@@ -1,4 +1,4 @@
-package com.example.foodie_moodie_20
+package com.example.foodie_moodie_20.uiScreens.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,13 +9,21 @@ import androidx.activity.viewModels
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.navArgs
-import com.example.foodie_moodie_20.roomDatabase.entities.FavouritesEntity
+import com.example.foodie_moodie_20.uiScreens.fragments.IngredientsFragment
+import com.example.foodie_moodie_20.uiScreens.fragments.InstructionsFragment
+import com.example.foodie_moodie_20.uiScreens.fragments.OverviewFragment
+import com.example.foodie_moodie_20.R
 import com.example.foodie_moodie_20.databinding.ActivityDetailsBinding
+import com.example.foodie_moodie_20.roomDatabase.entities.FavouritesEntity
+
 import com.example.foodie_moodie_20.utils.Constants.Companion.RECIPE_RESULT_KEY
 import com.example.foodie_moodie_20.viewModels.MainViewModel
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.tabs.TabLayoutMediator
+import dagger.hilt.android.AndroidEntryPoint
 
+
+@AndroidEntryPoint
 class DetailsActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityDetailsBinding

@@ -1,4 +1,4 @@
-package com.example.foodie_moodie_20
+package com.example.foodie_moodie_20.uiScreens.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,7 +9,10 @@ import android.webkit.WebViewClient
 import com.example.foodie_moodie_20.databinding.FragmentInstructionsBinding
 import com.example.foodie_moodie_20.utils.Constants
 import com.example.foodiepoodie.dataModels.Result
+import dagger.hilt.android.AndroidEntryPoint
 
+
+@AndroidEntryPoint
 class InstructionsFragment : Fragment() {
     private var _binding: FragmentInstructionsBinding? = null
     private val binding get() = _binding!!

@@ -1,9 +1,8 @@
-package com.example.foodie_moodie_20.api.spoonacularFood
+package com.example.foodie_moodie_20.api.api
 
 import com.example.foodiepoodie.dataModels.FoodRecipe
 import retrofit2.Response
 import retrofit2.http.GET
-import retrofit2.http.Query
 import retrofit2.http.QueryMap
 
 interface FoodRecipesApi {

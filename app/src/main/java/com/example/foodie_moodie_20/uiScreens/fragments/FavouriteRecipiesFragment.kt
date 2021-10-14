@@ -1,25 +1,23 @@
-package com.example.foodie_moodie_20
+package com.example.foodie_moodie_20.uiScreens.fragments
 
 import android.graphics.*
 import android.os.Bundle
 import android.util.Log
 import android.view.*
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.foodie_moodie_20.R
 import com.example.foodie_moodie_20.databinding.FragmentFavouriteRecipiesBinding
 import com.example.foodie_moodie_20.viewModels.MainViewModel
 import com.example.foodiemoodie.adapters.FavoriteRecipesAdapter
 import com.google.android.material.snackbar.Snackbar
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class FavouriteRecipiesFragment : Fragment() {
     private lateinit var mainViewModel: MainViewModel
     private val mAdapter: FavoriteRecipesAdapter by lazy { FavoriteRecipesAdapter() }

@@ -1,4 +1,4 @@
-package com.example.foodie_moodie_20
+package com.example.foodie_moodie_20.uiScreens.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,18 +8,15 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat
+import com.example.foodie_moodie_20.R
 import com.example.foodie_moodie_20.databinding.FragmentOverviewBinding
 import com.example.foodiepoodie.dataModels.Result
 import com.example.foodie_moodie_20.utils.Constants.Companion.RECIPE_RESULT_KEY
 import com.example.foodiemoodie.adapters.loadImage
+import dagger.hilt.android.AndroidEntryPoint
 import org.jsoup.Jsoup
 
-
-/**
- * A simple [Fragment] subclass.
- * Use the [OverviewFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
+@AndroidEntryPoint
 class OverviewFragment : Fragment() {
     private var _binding: FragmentOverviewBinding? = null
     private val binding get() = _binding!!
@@ -52,7 +49,7 @@ class OverviewFragment : Fragment() {
 
     private fun updateColors(stateIsOn: Boolean, textView: TextView, imageView: ImageView) {
         if (stateIsOn) {
-            imageView.setColorFilter(ContextCompat.getColor(requireContext(),R.color.green))
+            imageView.setColorFilter(ContextCompat.getColor(requireContext(), R.color.green))
             textView.setTextColor(ContextCompat.getColor(requireContext(), R.color.green))
         }
     }

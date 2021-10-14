@@ -4,29 +4,35 @@ import android.app.Application
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
+
 import androidx.lifecycle.*
 import com.example.foodie_moodie_20.roomDatabase.RecipesDatabase
 import com.example.foodie_moodie_20.roomDatabase.dao.RecipesDao
 
 import com.example.foodie_moodie_20.roomDatabase.entities.FavouritesEntity
 import com.example.foodie_moodie_20.roomDatabase.entities.RecipesEntity
-import com.example.foodie_moodie_20.api.spoonacularFood.FoodRecipesNetworkResult
-import com.example.foodie_moodie_20.utils.Repository
+import com.example.foodie_moodie_20.api.api.FoodRecipesNetworkResult
+import com.example.foodie_moodie_20.repository.Repository
 import com.example.foodiepoodie.dataModels.FoodRecipe
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.Dispatchers.Main
 import kotlinx.coroutines.launch
 import retrofit2.Response
 import java.lang.Exception
+import javax.inject.Inject
 
-class MainViewModel(application: Application): AndroidViewModel(application) {
+@HiltViewModel
+class MainViewModel @Inject constructor(
+    val repository: Repository,
+    application: Application): AndroidViewModel(application) {
 
-    val db by lazy{
+    val db by lazy {
         RecipesDatabase.provideDatabase(getApplication())
     }
 
     var recipesdao :RecipesDao=db.recipesDao()
-    private val repository = Repository(recipesdao)
+   // private val repository = Repository(recipesdao)
 
 
     /*ROOM - OFFLINE CACHING*/

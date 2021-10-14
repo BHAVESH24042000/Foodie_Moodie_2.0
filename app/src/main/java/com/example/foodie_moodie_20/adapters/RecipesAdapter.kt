@@ -17,8 +17,9 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.foodie_moodie_20.R
-import com.example.foodie_moodie_20.RecipiesFragmentDirections
+
 import com.example.foodie_moodie_20.databinding.RecipesRowLayoutBinding
+import com.example.foodie_moodie_20.uiScreens.fragments.RecipiesFragmentDirections
 
 
 import com.example.foodiepoodie.dataModels.Result
